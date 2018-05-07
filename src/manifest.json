@@ -1,7 +1,7 @@
 {
-  "name": "pwa-angular-campus",
-  "short_name": "pwa-angular-campus",
-  "theme_color": "#1976d2",
+  "name": "Card Collector",
+  "short_name": "CC",
+  "theme_color": "#3f51b5",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
