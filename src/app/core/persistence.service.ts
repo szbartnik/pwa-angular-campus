@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { RecordModel } from '../models/record.model';
 import { DocumentReference } from '@firebase/firestore-types';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class PersistenceService {
   constructor(
     private userService: UserService,
     private afs: AngularFirestore,
+    private afStorage: AngularFireStorage,
     private http: HttpClient
   ) { }
 
@@ -41,5 +43,12 @@ export class PersistenceService {
 
   public subscribeNotification(subscriptionData: any): Observable<any> {
     return this.http.post('http://localhost:3000/api/subscribe', subscriptionData);
+  }
+
+  public upload(event: any): AngularFireUploadTask {
+    const randomId = Math.random().toString(36).substring(2);
+    const ref = this.afStorage.ref(randomId);
+    const task = ref.put(event.target.files[0]);
+    return task;
   }
 }
