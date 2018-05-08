@@ -11,7 +11,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule,
+  MatToolbarModule, MatTableModule, MatPaginatorModule, MatSortModule,
 } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,13 +26,21 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
+import { CardsTableComponent } from './cards-table/cards-table.component';
+import { MainComponent } from './main/main.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     DashboardComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    CardsTableComponent,
+    MainComponent,
+    FavouritesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,10 @@ import { NavComponent } from './nav/nav.component';
     MatMenuModule,
     MatDialogModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   entryComponents: [AddDialogComponent],
