@@ -1,27 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import {
-  MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
-  MatListModule, MatGridListModule, MatCardModule, MatMenuModule
-} from '@angular/material';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CoreModule } from './core/core.module';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatToolbarModule,
+} from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { environment } from '../environments/environment';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +52,13 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
+  entryComponents: [AddDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
