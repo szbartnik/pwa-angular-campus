@@ -90,7 +90,6 @@ export class CardsTableDataSource extends DataSource<RecordModel> {
 
     this.persistenceService.getRecordsOfCurrentUser().subscribe(
       records => {
-        console.log(records)
         this.data = records;
         this.recordsSubject.next(records);
         this.loadingSubject.next(false);
