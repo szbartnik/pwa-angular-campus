@@ -10,8 +10,11 @@ import {
   MatInputModule,
   MatListModule,
   MatMenuModule,
+  MatPaginatorModule,
   MatSidenavModule,
-  MatToolbarModule, MatTableModule, MatPaginatorModule, MatSortModule,
+  MatSortModule,
+  MatTableModule,
+  MatToolbarModule,
 } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,15 +24,16 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
+import { AboutComponent } from './about/about.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing';
+import { CardsTableComponent } from './cards-table/cards-table.component';
 import { CoreModule } from './core/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavComponent } from './nav/nav.component';
-import { CardsTableComponent } from './cards-table/cards-table.component';
-import { MainComponent } from './main/main.component';
 import { FavouritesComponent } from './favourites/favourites.component';
-import { AboutComponent } from './about/about.component';
+import { MainComponent } from './main/main.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,8 @@ import { AboutComponent } from './about/about.component';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    AppRoutingModule,
   ],
   providers: [],
   entryComponents: [AddDialogComponent],
