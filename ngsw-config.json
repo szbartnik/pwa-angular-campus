@@ -20,5 +20,14 @@
         "/assets/**"
       ]
     }
+  }, {
+    "name": "photos",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "urls": [
+        "https://firebasestorage.googleapis.com/**"
+      ]
+    }
   }]
 }
