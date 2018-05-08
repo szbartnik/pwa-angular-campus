@@ -38,6 +38,7 @@ export class CardsTableComponent implements OnInit {
 
   public openDialog(photo: string): void {
     const dialogRef = this.dialog.open(CardPhotoDialogComponent, {
+      maxHeight: '70vh',
       data: { photo: photo }
     });
   }
