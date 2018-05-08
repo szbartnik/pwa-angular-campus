@@ -19,22 +19,9 @@ export class MainComponent implements OnInit {
     this.records = this.persistenceService.getRecordsOfCurrentUser();
   }
 
-  public addClicked(): void {
-    const sampleRecord = {
-      name: 'Test record',
-      notes: 'My notes',
-      photourl: 'My url'
-    };
-
-    this.persistenceService
-      .addRecordToCurrentUser(sampleRecord)
-      .then();
-  }
-
   public deleteClicked(record: RecordModel): void {
     this.persistenceService
       .deleteRecordOfCurrentUser(record.id)
       .then();
   }
-
 }
