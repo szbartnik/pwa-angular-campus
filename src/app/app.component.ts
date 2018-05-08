@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
 import { PersistenceService } from './core/persistence.service';
-import { UserModel } from './models/user.model';
-import { RecordModel } from './models/record.model';
-import { UserService } from './core/user.service';
 import { SwPush } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -15,35 +12,28 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
 
-  public title = 'app';
-  public records: Observable<RecordModel[]>;
+  public name: string;
 
   constructor(
-    public userService: UserService,
     private persistenceService: PersistenceService,
-    private swPush: SwPush
+    private swPush: SwPush,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
-    this.records = this.persistenceService.getRecordsOfCurrentUser();
   }
 
-  public addClicked(): void {
-    const sampleRecord = {
-      name: 'Test record',
-      notes: 'My notes',
-      photourl: 'My url'
-    };
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddDialogComponent, {
+      width: '250px',
+      data: { name: this.name }
+    });
 
-    this.persistenceService
-      .addRecordToCurrentUser(sampleRecord)
-      .then();
-  }
-
-  public deleteClicked(record: RecordModel): void {
-    this.persistenceService
-      .deleteRecordOfCurrentUser(record.id)
-      .then();
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.name = result;
+      console.log(this.name);
+    });
   }
 
   public subscribeToNotification(): void {

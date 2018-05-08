@@ -1,23 +1,7 @@
-<!-- <app-nav></app-nav> -->
-<app-dashboard></app-dashboard>
+<app-nav></app-nav>
+<!-- <app-dashboard></app-dashboard> -->
+<router-outlet></router-outlet>
 
-<p><b>User ID:</b> {{ userService.userId }}</p>
 
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Notes</th>
-    <th>Photo URL</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let record of records | async">
-      <td>{{ record.name }}</td>
-      <td>{{ record.notes }}</td>
-      <td>{{ record.photourl }}</td>
-      <td><button (click)="deleteClicked(record)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
-
-<button (click)="addClicked()">Add new record</button>
+<button mat-fab class="floating-button" (click)="openDialog()"><i class="material-icons">add</i></button>
 <button (click)="subscribeToNotification()">Subscribe</button>
