@@ -4,7 +4,7 @@
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="isHandset ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async)!.matches ? 'side' : 'side'"
+    [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="false">
     <mat-toolbar color="primary">
       <span>Menu</span>
@@ -25,6 +25,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Card Collector</span>
+      <mat-icon class="alert" aria-label="Side nav toggle icon" (click)="subscribeToNotification()">add_alert</mat-icon>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>

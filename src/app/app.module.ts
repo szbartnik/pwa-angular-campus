@@ -29,6 +29,7 @@ import { AboutComponent } from './about/about.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
+import { CardPhotoDialogComponent } from './card-photo-dialog/card-photo-dialog.component';
 import { CardsTableComponent } from './cards-table/cards-table.component';
 import { CoreModule } from './core/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -45,7 +46,8 @@ import { NavComponent } from './nav/nav.component';
     CardsTableComponent,
     MainComponent,
     FavouritesComponent,
-    AboutComponent
+    AboutComponent,
+    CardPhotoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,7 @@ import { NavComponent } from './nav/nav.component';
     AppRoutingModule,
   ],
   providers: [],
-  entryComponents: [AddDialogComponent],
+  entryComponents: [AddDialogComponent, CardPhotoDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,4 @@
+.cdk-column-delete {
+  display: flex;
+  justify-content: flex-end;
+}
