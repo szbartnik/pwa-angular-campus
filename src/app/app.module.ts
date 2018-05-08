@@ -12,6 +12,7 @@ import {
   MatMenuModule,
   MatPaginatorModule,
   MatSidenavModule,
+  MatSnackBarModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule,
@@ -36,6 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
+import { SnackBarOffilneComponent } from './snack-bar-offilne/snack-bar-offilne.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { NavComponent } from './nav/nav.component';
     MainComponent,
     FavouritesComponent,
     AboutComponent,
-    CardPhotoDialogComponent
+    CardPhotoDialogComponent,
+    SnackBarOffilneComponent
   ],
   imports: [
     BrowserModule,
@@ -76,9 +79,10 @@ import { NavComponent } from './nav/nav.component';
     MatPaginatorModule,
     MatSortModule,
     AppRoutingModule,
+    MatSnackBarModule
   ],
   providers: [],
-  entryComponents: [AddDialogComponent, CardPhotoDialogComponent],
+  entryComponents: [AddDialogComponent, CardPhotoDialogComponent, SnackBarOffilneComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
