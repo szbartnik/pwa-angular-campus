@@ -5,6 +5,8 @@ import { PersistenceService } from './core/persistence.service';
 import { UserModel } from './models/user.model';
 import { RecordModel } from './models/record.model';
 import { UserService } from './core/user.service';
+import { SwPush } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    private persistenceService: PersistenceService
+    private persistenceService: PersistenceService,
+    private swPush: SwPush
   ) { }
 
   ngOnInit(): void {
@@ -41,5 +44,21 @@ export class AppComponent implements OnInit {
     this.persistenceService
       .deleteRecordOfCurrentUser(record.id)
       .then();
+  }
+
+  public subscribeToNotification(): void {
+    this.swPush.requestSubscription({
+      serverPublicKey: environment.notificationsPublicKey
+    })
+      .then(sub => {
+        console.log('Successfully subscribed to notification');
+        this.persistenceService.subscribeNotification(sub).subscribe(x => {
+          console.log('Successfully persisted subscription');
+        }, err => {
+          console.error('Could not persist subscription');
+        });
+      }).catch(err => {
+        console.error('Could not subscribe to notifications', err);
+      });
   }
 }

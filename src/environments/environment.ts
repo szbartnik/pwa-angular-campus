@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  notificationsPublicKey: 'BAvDMcexg3uaneVs-6pFGMVFw2PPUkIKEtgj5N4t-bB3Fcednt6kN3qQ4tMy3vNBkZmgxnKhQA5Y6sueaRJyehE',
   firebase: {
     apiKey: 'AIzaSyCXRL9U96v8i404SpGkG0Wivi9J0FrXcg8',
     authDomain: 'pwa-angular-campus.firebaseapp.com',
