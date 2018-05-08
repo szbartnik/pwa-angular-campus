@@ -4,7 +4,7 @@
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="isHandset ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async)!.matches ? 'side' : 'side'"
+    [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="false">
     <mat-toolbar color="primary">
       <span>Menu</span>
