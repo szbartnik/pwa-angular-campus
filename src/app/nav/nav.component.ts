@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
