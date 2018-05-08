@@ -11,7 +11,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng build --prod
+  - ng build --prod -c firebase
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN

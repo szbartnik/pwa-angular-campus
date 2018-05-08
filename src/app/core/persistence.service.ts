@@ -7,6 +7,7 @@ import { RecordModel } from '../models/record.model';
 import { DocumentReference } from '@firebase/firestore-types';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,7 @@ export class PersistenceService {
   }
 
   public subscribeNotification(subscriptionData: any): Observable<any> {
-    return this.http.post('http://localhost:3000/api/subscribe', subscriptionData);
+    return this.http.post(environment.subscribeEndpoint, subscriptionData);
   }
 
   public upload(event: any): AngularFireUploadTask {
