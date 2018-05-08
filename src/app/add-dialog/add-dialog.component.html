@@ -1,14 +1,25 @@
 <h1 mat-dialog-title>Add your card</h1>
 <div mat-dialog-content>
   <mat-form-field class="example-full-width">
-    <input matInput [(ngModel)]="recordName" placeholder="Card name">
+    <input matInput
+           [(ngModel)]="recordName"
+           placeholder="Card name">
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="recordNotes" placeholder="Card notes">
+    <input matInput
+           [(ngModel)]="recordNotes"
+           placeholder="Card notes">
   </mat-form-field>
-  <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+  <input type="file"
+         (change)="upload($event)"
+         accept=".png,.jpg" />
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button [disabled]="isFinalizeDisabled" (click)="onYesClick()" cdkFocusInitial>Add</button>
+  <span *ngIf="!(isConnected | async)" class="offline-status">You are offline - wait for connection</span>
+  <button mat-button
+          (click)="onNoClick()">Cancel</button>
+  <button mat-button
+          [disabled]="isFinalizeDisabled || !(isConnected | async)"
+          (click)="onYesClick()"
+          cdkFocusInitial>Add</button>
 </div>

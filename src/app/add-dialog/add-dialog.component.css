@@ -1,0 +1,10 @@
+.offline-status {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 11px;
+  color: red;
+  font-weight: 500;
+}
+
+input[type="file"] {
+  width: 200px;
+}
