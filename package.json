@@ -1,15 +1,14 @@
 {
   "name": "pwa-angular-campus",
-  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "serve": "firebase serve --only functions"
+    "e2e": "ng e2e"
   },
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.0",

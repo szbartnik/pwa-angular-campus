@@ -14,6 +14,13 @@
     ]
   },
   "functions": {
-    "source": "backend"
+    "predeploy": "npm --prefix firebase/functions run build",
+    "source": "firebase/functions"
+  },
+  "firestore": {
+    "rules": "firebase/firestore/firestore.rules.json"
+  },
+  "storage": {
+    "rules": "firebase/storage/storage.rules.json"
   }
 }
