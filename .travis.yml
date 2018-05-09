@@ -19,7 +19,7 @@ before_script:
 script:
   - yarn run build --configuration=firebase
 
-after_script:
+deploy:
   provider: firebase
   skip_cleanup: true
   token: $FIREBASE_TOKEN
