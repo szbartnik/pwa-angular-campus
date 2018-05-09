@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "8.9.3"
 cache:
+  yarn: true
   directories:
   - node_modules
   - firebase/functions/node_modules
@@ -18,7 +19,7 @@ before_script:
 script:
   - yarn run build --configuration=firebase
 
-deploy:
+after_script:
   provider: firebase
   skip_cleanup: true
   token: $FIREBASE_TOKEN
