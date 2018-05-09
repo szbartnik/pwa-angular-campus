@@ -1,0 +1,1 @@
+firebase functions:config:set vapidkeys.private="TO_FILL"

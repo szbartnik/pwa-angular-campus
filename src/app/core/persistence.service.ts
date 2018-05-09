@@ -7,7 +7,7 @@ import { RecordModel } from '../models/record.model';
 import { DocumentReference } from '@firebase/firestore-types';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
